@@ -311,8 +311,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
-        Evaluation
+      <a href="../inference/" class="md-nav__link">
+        Inference
       </a>
     </li>
   
@@ -322,46 +322,13 @@
       
       
 
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          Benchmarks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Benchmarks" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          Benchmarks
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
   
   
   
     <li class="md-nav__item">
-      <a href="../benchmark.md" class="md-nav__link">
-        Overview
+      <a href="../baseline/" class="md-nav__link">
+        Baseline Results
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -444,8 +411,7 @@
 <p>WildlifeDataset is a class for creating pytorch style datasets by integration of datasets provided by wildlife-datasets library. It has implemented __len__ and __getattr__ methods, which allows using pytorch dataloaders for training and inference.</p>
 <h2 id="metadata-dataframe">Metadata dataframe</h2>
 <p>Integral part of WildlifeDataset is metadata dataframe, which includes all information about images in the dataset.
-Typical dataset from the wildlife-dataset have following metadata table:
-<code>image_id</code>, <code>identity</code>, <code>path</code> columns are required, rest are optional.</p>
+Typical dataset from the wildlife-dataset have following metadata table:</p>
 <table>
 <thead>
 <tr>
@@ -484,7 +450,7 @@ Typical dataset from the wildlife-dataset have following metadata table:
 </tr>
 </tbody>
 </table>
-<p>where <code>bbox</code> is bounding box in form [x, y, width, height], and can be stored both as list or string. <code>compressed rle</code> is segmentation mask in compressed RLE format as described by <a href="https://pypi.org/project/pycocotools/">pycocotools</a></p>
+<p>Columns <code>image_id</code>, <code>identity</code>, <code>path</code> are required, other columns are optional. In the table above, <code>bbox</code> is bounding box in form [x, y, width, height], and can be stored both as list or string. <code>compressed rle</code> is segmentation mask in compressed RLE format as described by <a href="https://pypi.org/project/pycocotools/">pycocotools</a></p>
 <h2 id="loading-methods">Loading methods</h2>
 <p>If metadata table have optional <code>bbox</code> or <code>segmentation</code> columns, additional alternative image loading methods can be used.</p>
 <table>

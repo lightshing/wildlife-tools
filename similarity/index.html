@@ -357,8 +357,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../evaluation/" class="md-nav__link">
-        Evaluation
+      <a href="../inference/" class="md-nav__link">
+        Inference
       </a>
     </li>
   
@@ -368,46 +368,13 @@
       
       
 
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          Benchmarks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Benchmarks" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          Benchmarks
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
   
   
   
     <li class="md-nav__item">
-      <a href="../benchmark.md" class="md-nav__link">
-        Overview
+      <a href="../baseline/" class="md-nav__link">
+        Baseline Results
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -902,6 +869,16 @@ after filtering with Low ratio test.</p>
                 <code>&#39;cuda&#39;</code>
           </td>
         </tr>
+        <tr>
+          <td><code>silent</code></td>
+          <td>
+                <code>bool</code>
+          </td>
+          <td><p>disable tqdm bar.</p></td>
+          <td>
+                <code>False</code>
+          </td>
+        </tr>
     </tbody>
   </table>
 
@@ -975,7 +952,10 @@ after filtering with Low ratio test.</p>
 <span class="normal">69</span>
 <span class="normal">70</span>
 <span class="normal">71</span>
-<span class="normal">72</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MatchLOFTR</span><span class="p">(</span><span class="n">Similarity</span><span class="p">):</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">MatchLOFTR</span><span class="p">(</span><span class="n">Similarity</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Calculate similarity between query and database as number of descriptors correspondences </span>
 <span class="sd">    after filtering with Low ratio test.</span>
@@ -985,6 +965,7 @@ after filtering with Low ratio test.</p>
 <span class="sd">        thresholds: Iterable with confidence tresholds. Should be in [0, 1] interval.</span>
 <span class="sd">        batch_size: Batch size used for the inference.</span>
 <span class="sd">        device: Specifies device used for the inference.</span>
+<span class="sd">        silent: disable tqdm bar.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        dict: dictionary with key for each treshold. Values are 2D array with number of correspondences.</span>
@@ -996,11 +977,13 @@ after filtering with Low ratio test.</p>
         <span class="n">thresholds</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.99</span><span class="p">,</span> <span class="p">),</span>
         <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span>
         <span class="n">device</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span>
+        <span class="n">silent</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">device</span> <span class="o">=</span> <span class="n">device</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">matcher</span> <span class="o">=</span> <span class="n">KF</span><span class="o">.</span><span class="n">LoFTR</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="n">pretrained</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">thresholds</span> <span class="o">=</span> <span class="n">thresholds</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">silent</span> <span class="o">=</span> <span class="n">silent</span>
 
 
     <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">database</span><span class="p">):</span>
@@ -1008,7 +991,7 @@ after filtering with Low ratio test.</p>
         <span class="n">iterator_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">database</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">))</span>
         <span class="n">similarities</span> <span class="o">=</span> <span class="p">{</span><span class="n">t</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">query</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">database</span><span class="p">)),</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">thresholds</span><span class="p">}</span>
 
-        <span class="k">for</span> <span class="n">pair_batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">iterator_size</span><span class="p">,</span> <span class="n">mininterval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">pair_batch</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">iterator</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="n">iterator_size</span><span class="p">,</span> <span class="n">mininterval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">disable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">silent</span><span class="p">):</span>
             <span class="n">q</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">pair_batch</span><span class="p">)</span>
             <span class="n">q_idx</span><span class="p">,</span> <span class="n">q_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">q</span><span class="p">))</span>
             <span class="n">d_idx</span><span class="p">,</span> <span class="n">d_data</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">d</span><span class="p">))</span>
@@ -1084,13 +1067,13 @@ after filtering with Low ratio test.</p>
       
       
         
-        <a href="../evaluation/" class="md-footer__link md-footer__link--next" aria-label="Next: Evaluation" rel="next">
+        <a href="../inference/" class="md-footer__link md-footer__link--next" aria-label="Next: Inference" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Evaluation
+              Inference
             </div>
           </div>
           <div class="md-footer__button md-icon">

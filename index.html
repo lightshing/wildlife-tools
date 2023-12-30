@@ -345,8 +345,8 @@
   
   
     <li class="md-nav__item">
-      <a href="evaluation/" class="md-nav__link">
-        Evaluation
+      <a href="inference/" class="md-nav__link">
+        Inference
       </a>
     </li>
   
@@ -356,46 +356,13 @@
       
       
 
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_7">
-          Benchmarks
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Benchmarks" data-md-level="1">
-        <label class="md-nav__title" for="__nav_7">
-          <span class="md-nav__icon md-icon"></span>
-          Benchmarks
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
   
   
   
     <li class="md-nav__item">
-      <a href="benchmark.md" class="md-nav__link">
-        Overview
+      <a href="baseline/" class="md-nav__link">
+        Baseline Results
       </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
     </li>
   
 
@@ -516,7 +483,7 @@
 <li>The <code>train</code> module offers tools for fine-tuning feature extractors on the <code>WildlifeDataset</code>.</li>
 <li>The <code>features</code> module provides tools for extracting features from the <code>WildlifeDataset</code> using various extractors.</li>
 <li>The <code>similarity</code> module provides tools for constructing a similarity matrix from query and database features.</li>
-<li>The <code>evaluation</code> module offers tools for creating and evaluating predictions using the similarity matrix.</li>
+<li>The <code>inference</code> module offers tools for creating predictions using the similarity matrix.</li>
 </ul>
 <h2 id="relations-between-modules">Relations between modules:</h2>
 <pre class="mermaid"><code>  graph TD;
@@ -524,10 +491,10 @@
       A--&gt;|WildlifeDataset|C;
       C[Train]--&gt;|finetuned extractor|B;
       B--&gt;|query and database features|D[Similarity]
-      D--&gt;|similarity matrix|E[Evaluation]</code></pre>
+      D--&gt;|similarity matrix|E[Inference]</code></pre>
 <h2 id="example">Example</h2>
 <h3 id="1-create-wildlifedataset">1. Create <code>WildlifeDataset</code></h3>
-<p>Using metadata from <code>wildlife-datasets</code>, create <code>WildlifeDataset</code> object for the SeaTurtleID.</p>
+<p>Using metadata from <code>wildlife-datasets</code>, create <code>WildlifeDataset</code> object for the StripeSpotter dataset.</p>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wildlife_datasets.datasets</span> <span class="kn">import</span> <span class="n">StripeSpotter</span>
 <span class="kn">from</span> <span class="nn">wildlife_tools.data</span> <span class="kn">import</span> <span class="n">WildlifeDataset</span>
 <span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">T</span>
@@ -557,7 +524,7 @@
 </code></pre></div>
 <h3 id="4-evaluate">4. Evaluate</h3>
 <p>Use the cosine similarity in nearest neigbour classifier and get predictions.</p>
-<div class="highlight"><pre><span></span><code><span class="n">classifier</span> <span class="o">=</span> <span class="n">KnnClassifier</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">classifier</span> <span class="o">=</span> <span class="n">KnnClassifier</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">database_labels</span><span class="o">=</span><span class="n">database</span><span class="o">.</span><span class="n">labels_string</span><span class="p">)</span>
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">classifier</span><span class="p">(</span><span class="n">similarity</span><span class="p">[</span><span class="s1">&#39;cosine&#39;</span><span class="p">])</span>
 </code></pre></div>
 <h2 id="installation">Installation</h2>
