@@ -1,0 +1,1802 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../sim_global/">
+      
+      
+        <link rel="next" href="../sim_calibration/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.42">
+    
+    
+      
+        <title>Matching Similarity - Wildlife Tools</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#matching-based-similarity-scores" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Wildlife Tools" class="md-header__button md-logo" aria-label="Wildlife Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Wildlife Tools
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Matching Similarity
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/WildlifeDatasets/wildlife-tools" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wildlife-tools
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Wildlife Tools" class="md-nav__button md-logo" aria-label="Wildlife Tools" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Wildlife Tools
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/WildlifeDatasets/wildlife-tools" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wildlife-tools
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datasets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Train
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Extraction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Similarity
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Similarity
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim_global/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Global Similarity
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Matching Similarity
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Matching Similarity
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.base" class="md-nav__link">
+    <span class="md-ellipsis">
+      base
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchPairs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MatchPairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs.__call__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __call__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs.get_matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.lightglue" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightglue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lightglue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.lightglue.MatchLightGlue" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchLightGlue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.loftr" class="md-nav__link">
+    <span class="md-ellipsis">
+      loftr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="loftr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.loftr.MatchLOFTR" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchLOFTR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      collectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="collectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectAll" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectAll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectCounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectCounts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectCountsRansac" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectCountsRansac
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-superglue-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example - SuperGlue matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-loftr-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example - LOFTR matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim_calibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calibration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sim_wildfusion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WildFusion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inference
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../baseline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Baseline Results
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.base" class="md-nav__link">
+    <span class="md-ellipsis">
+      base
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="base">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchPairs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MatchPairs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs.__call__" class="md-nav__link">
+    <span class="md-ellipsis">
+      __call__
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.base.MatchPairs.get_matches" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_matches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.lightglue" class="md-nav__link">
+    <span class="md-ellipsis">
+      lightglue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="lightglue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.lightglue.MatchLightGlue" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchLightGlue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.loftr" class="md-nav__link">
+    <span class="md-ellipsis">
+      loftr
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="loftr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.loftr.MatchLOFTR" class="md-nav__link">
+    <span class="md-ellipsis">
+      MatchLOFTR
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      collectors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="collectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectAll" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectAll
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectCounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectCounts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.pairwise.collectors.CollectCountsRansac" class="md-nav__link">
+    <span class="md-ellipsis">
+      CollectCountsRansac
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-superglue-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example - SuperGlue matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-loftr-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example - LOFTR matching
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="matching-based-similarity-scores">Matching based similarity scores</h1>
+<p>The <code>similarity.pairwise</code> module provides tools and methods for calculating pairwise matching similarity scores. At its core, the <code>MatchPairs</code> base class offers pairwise matching with support for batch processing, making it essential for neural network-based matching.</p>
+<p>Specific implementations of of <code>MatchPairs</code> are:</p>
+<ul>
+<li><code>MatchLightGlue</code>: This class uses the LightGlue model, a lightweight neural matching that uses extracted SIFT, DISK, ALIKED or SuperPoint keypoints and descriptors.</li>
+<li><code>MatchLOFTR</code>: This class uses the LOFTR (Local Feature TRansformer) model, which performs descriptor-free matching using directly pair of images.</li>
+</ul>
+<p>Outputs from the matchers, such as confidence scores for local matches and keypoints, are processed using collectors from <code>similarity.pairwise.collectors</code>. In particular, the <code>CollectCounts</code> collector calculates  matching similarity scores by counting significant matches based on given confidence thresholds.</p>
+<p>Performance consideration: For the best performance LOFTR requires higher image resolution such as 512x512. However, this makes it about 5x slower than Lighglue with default values (256 keypoints and descriptors per image). </p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="similarity.pairwise.base" class="doc doc-heading">
+            <code>similarity.pairwise.base</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.base.MatchPairs" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">MatchPairs</span><span class="p">(</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tqdm_silent</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">collector</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Base class for matching pairs from two datasets.
+Any child class needs to implement <code>get_matches</code> method that implements processing of pair batches.</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>batch_size</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of pairs processed in one batch.</p>
+              </div>
+            </td>
+            <td>
+                  <code>128</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>num_workers</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of workers used for data loading.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>tqdm_silent</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, progress bar is disabled.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>collector</code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Collector object used for storing results.
+By default, CollectCounts(thresholds=[0.5]) is used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="similarity.pairwise.base.MatchPairs.__call__" class="doc doc-heading">
+            <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="n">dataset0</span><span class="p">,</span> <span class="n">dataset1</span><span class="p">,</span> <span class="n">pairs</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Match pairs of features from two feature datasets.
+Output for each pair is stored and processed using the collector.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>dataset0</code></td>
+            <td>
+                  <code><span title="similarity.data.FeatureDataset">FeatureDataset</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>First dataset (e.g. query).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>dataset1</code></td>
+            <td>
+                  <code><span title="similarity.data.FeatureDataset">FeatureDataset</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Second dataset (e.g. database).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>pairs</code></td>
+            <td>
+                  <code><span title="numpy.ndarray">ndarray</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Numpy array with pairs of indexes. If None, all pairs are used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Exact output is determined by the used collector.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="similarity.pairwise.base.MatchPairs.get_matches" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_matches</span><span class="p">(</span><span class="n">batch</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Process batch and get matches of pairs for the batch. Implemented in child classes.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>batch</code></td>
+            <td>
+                  <code>tuple</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>4-tuple with indexes and data from PairDataset.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list of standartized dictionaries with keys: idx0, idx1, score, kpts0, kpts1.
+Length of list is equal to batch size.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="similarity.pairwise.lightglue" class="doc doc-heading">
+            <code>similarity.pairwise.lightglue</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.lightglue.MatchLightGlue" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">MatchLightGlue</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">init_threshold</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="similarity.pairwise.base.MatchPairs" href="#similarity.pairwise.base.MatchPairs">MatchPairs</a></code></p>
+
+
+        <p>Implements matching using LightGlue model correspondences.
+Introduced in: "LightGlue: Local Feature Matching at Light Speed"</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>features</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Features used for matching. Options: 'sift', 'superpoint', 'aliked',
+'disk'. Must match extracted features from the dataset.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>init_threshold</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keep matches only over this threshold. Matches with
+lower values are not passed to the collector.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.1</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>device</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Device used for inference. Defaults to None.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="similarity.pairwise.loftr" class="doc doc-heading">
+            <code>similarity.pairwise.loftr</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.loftr.MatchLOFTR" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">MatchLOFTR</span><span class="p">(</span><span class="n">pretrained</span><span class="o">=</span><span class="s1">&#39;outdoor&#39;</span><span class="p">,</span> <span class="n">init_threshold</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">apply_fine</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="similarity.pairwise.base.MatchPairs" href="#similarity.pairwise.base.MatchPairs">MatchPairs</a></code></p>
+
+
+        <p>Implements matching pairs using LoFTR model correspondences.
+Introduced in: "LoFTR: Detector-Free Local Feature Matching with Transformers"</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>pretrained</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>LOFTR model used. <code>outdoor</code> or <code>indoor</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;outdoor&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>device</code></td>
+            <td>
+                  <code>str | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Specifies device used for the inference.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>init_threshold</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Keep matches only over this threshold.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.2</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>apply_fine</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Use LoFTR fine refinement of keypoints locations. Has no effect on
+confidence, but is faster without fine refinement. False by default.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="similarity.pairwise.collectors" class="doc doc-heading">
+            <code>similarity.pairwise.collectors</code>
+
+
+</h2>
+
+    <div class="doc doc-contents first">
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.collectors.CollectAll" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">CollectAll</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Collect the results without additional processing.
+Collected data is list of matcher results for each pair. Usefull for keypoint visualizations.</p>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.collectors.CollectCounts" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">CollectCounts</span><span class="p">(</span><span class="n">grid_dtype</span><span class="o">=</span><span class="s1">&#39;float16&#39;</span><span class="p">,</span> <span class="n">thresholds</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>Collect count of significant matches given confidence thresholds.
+Output is stored in [n_query x n_database] grid.</p>
+<p>If multiple thresholds are provided, returns a dictionary with each threshold as a key and
+the corresponding grid as value.</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>grid_dtype</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Data type of the output grid.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;float16&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>thresholds</code></td>
+            <td>
+                  <code>tuple</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Confidence thresholds for counting.</p>
+              </div>
+            </td>
+            <td>
+                  <code>(0.5)</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="similarity.pairwise.collectors.CollectCountsRansac" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">CollectCountsRansac</span><span class="p">(</span><span class="n">grid_dtype</span><span class="o">=</span><span class="s1">&#39;float16&#39;</span><span class="p">,</span> <span class="n">ransacReprojThreshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">USAC_MAGSAC</span><span class="p">,</span> <span class="n">confidence</span><span class="o">=</span><span class="mf">0.999</span><span class="p">,</span> <span class="n">maxIters</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="similarity.pairwise.collectors.CollectCounts" href="#similarity.pairwise.collectors.CollectCounts">CollectCounts</a></code></p>
+
+
+        <p>Collect count of RANSAC inliers of fundamental matrix estimate.
+Output is stored in [n_query x n_database] grid.</p>
+
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>grid_dtype</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Data type of the output grid.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;float16&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ransacReprojThreshold</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>OpenCV RANSAC reprojection threshold.</p>
+              </div>
+            </td>
+            <td>
+                  <code>1.0</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>method</code></td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>OpenCV RANSAC method.</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="cv2.USAC_MAGSAC">USAC_MAGSAC</span></code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>confidence</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>OpenCV RANSAC confidence.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.999</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>maxIters</code></td>
+            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>OpenCV RANSAC max iterations.</p>
+              </div>
+            </td>
+            <td>
+                  <code>100</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="examples">Examples</h2>
+<h3 id="example-superglue-matching">Example - SuperGlue matching</h3>
+<p>Matches all pairs using the SuperGlue matcher with SuperPoint features and calculates similarity scores based on the count of significant matches at confidence thresholds of 0.25, 0.5, and 0.75.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">T</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.features.local</span> <span class="kn">import</span> <span class="n">SuperPointExtractor</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.similarity.pairwise.lightglue</span> <span class="kn">import</span> <span class="n">MatchLightGlue</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.similarity.pairwise.collectors</span> <span class="kn">import</span> <span class="n">CollectCounts</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.data.dataset</span> <span class="kn">import</span> <span class="n">WildlifeDataset</span>
+
+<span class="n">transform</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">T</span><span class="o">.</span><span class="n">Resize</span><span class="p">([</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">]),</span> <span class="n">T</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>
+<span class="n">dataset_query</span> <span class="o">=</span> <span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata_query</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">dataset_database</span> <span class="o">=</span> <span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata_database</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+<span class="n">extractor</span> <span class="o">=</span> <span class="n">SuperPointExtractor</span><span class="p">()</span>
+<span class="n">matcher</span> <span class="o">=</span> <span class="n">MatchLightGlue</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="s1">&#39;superpoint&#39;</span><span class="p">,</span> <span class="n">collector</span><span class="o">=</span><span class="n">CollectCounts</span><span class="p">(</span><span class="n">thresholds</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]))</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">extractor</span><span class="p">(</span><span class="n">dataset_query</span><span class="p">),</span> <span class="n">extractor</span><span class="p">(</span><span class="n">dataset_database</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="example-loftr-matching">Example - LOFTR matching</h3>
+<p>Matches all pairs using the LOFTR matcher and calculates similarity scores based on the count of significant matches at confidence thresholds of 0.25, 0.5, and 0.75. Note that LOFTR operates directly on image pairs and requires no feature extraction.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wildlife_tools.similarity.pairwise.loftr</span> <span class="kn">import</span> <span class="n">MatchLOFTR</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.similarity.pairwise.collectors</span> <span class="kn">import</span> <span class="n">CollectCounts</span>
+<span class="kn">from</span> <span class="nn">wildlife_tools.data.dataset</span> <span class="kn">import</span> <span class="n">WildlifeDataset</span>
+
+<span class="n">transform</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">T</span><span class="o">.</span><span class="n">Resize</span><span class="p">([</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">]),</span> <span class="n">T</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>
+<span class="n">dataset_query</span> <span class="o">=</span> <span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata_query</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">dataset_database</span> <span class="o">=</span> <span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata_database</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+<span class="n">extractor</span> <span class="o">=</span> <span class="n">SuperPointExtractor</span><span class="p">()</span>
+<span class="n">matcher</span> <span class="o">=</span> <span class="n">MatchLightGlue</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="s1">&#39;superpoint&#39;</span><span class="p">,</span> <span class="n">collector</span><span class="o">=</span><span class="n">CollectCounts</span><span class="p">(</span><span class="n">thresholds</span><span class="o">=</span><span class="p">[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">]))</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">matcher</span><span class="p">(</span><span class="n">dataset_query</span><span class="p">,</span> <span class="n">dataset_database</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../dataset/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../features/">
+        <link rel="next" href="../training/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Train - Wildlife Tools</title>
+        <title>Datasets - Wildlife Tools</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#training" class="md-skip">
+        <a href="#data.dataset" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Train
+              Datasets
             
           </span>
         </div>
@@ -197,26 +197,6 @@
       
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../dataset/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Datasets
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -226,14 +206,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Train
+    Datasets
   </span>
   
 
@@ -244,7 +222,7 @@
         
   
   <span class="md-ellipsis">
-    Train
+    Datasets
   </span>
   
 
@@ -256,8 +234,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -266,37 +242,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#replicability" class="md-nav__link">
+  <a href="#data.dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      Replicability
+      dataset
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train.trainer" class="md-nav__link">
-    <span class="md-ellipsis">
-      trainer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="trainer">
+    <nav class="md-nav" aria-label="dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#train.trainer.BasicTrainer" class="md-nav__link">
+  <a href="#data.dataset.ImageDataset" class="md-nav__link">
     <span class="md-ellipsis">
-      BasicTrainer
+      ImageDataset
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.trainer.get_random_states" class="md-nav__link">
+  <a href="#data.dataset.WildlifeDataset" class="md-nav__link">
     <span class="md-ellipsis">
-      get_random_states
+      WildlifeDataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data.dataset.FeatureDataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureDataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data.dataset.FeatureDatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureDatabase
     </span>
   </a>
   
@@ -308,37 +293,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#train.objective" class="md-nav__link">
+  <a href="#wildlife-dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      objective
+      Wildlife dataset
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="objective">
+    <nav class="md-nav" aria-label="Wildlife dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#train.objective.ArcFaceLoss" class="md-nav__link">
+  <a href="#metadata-dataframe" class="md-nav__link">
     <span class="md-ellipsis">
-      ArcFaceLoss
+      Metadata dataframe
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.objective.TripletLoss" class="md-nav__link">
+  <a href="#loading-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      TripletLoss
+      Loading methods
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.objective.SoftmaxLoss" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      SoftmaxLoss
+      Example
     </span>
   </a>
   
@@ -346,15 +331,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
   
 </li>
       
@@ -362,6 +338,26 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../training/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Train
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -569,8 +565,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -579,37 +573,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#replicability" class="md-nav__link">
+  <a href="#data.dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      Replicability
+      dataset
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#train.trainer" class="md-nav__link">
-    <span class="md-ellipsis">
-      trainer
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="trainer">
+    <nav class="md-nav" aria-label="dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#train.trainer.BasicTrainer" class="md-nav__link">
+  <a href="#data.dataset.ImageDataset" class="md-nav__link">
     <span class="md-ellipsis">
-      BasicTrainer
+      ImageDataset
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.trainer.get_random_states" class="md-nav__link">
+  <a href="#data.dataset.WildlifeDataset" class="md-nav__link">
     <span class="md-ellipsis">
-      get_random_states
+      WildlifeDataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data.dataset.FeatureDataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureDataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data.dataset.FeatureDatabase" class="md-nav__link">
+    <span class="md-ellipsis">
+      FeatureDatabase
     </span>
   </a>
   
@@ -621,37 +624,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#train.objective" class="md-nav__link">
+  <a href="#wildlife-dataset" class="md-nav__link">
     <span class="md-ellipsis">
-      objective
+      Wildlife dataset
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="objective">
+    <nav class="md-nav" aria-label="Wildlife dataset">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#train.objective.ArcFaceLoss" class="md-nav__link">
+  <a href="#metadata-dataframe" class="md-nav__link">
     <span class="md-ellipsis">
-      ArcFaceLoss
+      Metadata dataframe
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.objective.TripletLoss" class="md-nav__link">
+  <a href="#loading-methods" class="md-nav__link">
     <span class="md-ellipsis">
-      TripletLoss
+      Loading methods
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#train.objective.SoftmaxLoss" class="md-nav__link">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      SoftmaxLoss
+      Example
     </span>
   </a>
   
@@ -659,15 +662,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    <span class="md-ellipsis">
-      Examples
-    </span>
-  </a>
   
 </li>
       
@@ -689,18 +683,12 @@
   
 
 
-<h1 id="training">Training</h1>
-<p>We provide simple trainer class for training on <code>WildlifeDataset</code> instances as well as wrappers for ArcFace and Triplet losses.</p>
-<h2 id="replicability">Replicability</h2>
-<p>The model can be trained with a specified seed to ensure replicable results by calling the <code>set_seed</code> function at the beginning of the training process. If the trainer is saved into checkpoint, the seed is stored as well, allowing for its later use in restarting the model and maintaining replicability throughout the restart.</p>
-
-
 <div class="doc doc-object doc-module">
 
 
 
-<h2 id="train.trainer" class="doc doc-heading">
-            <code>train.trainer</code>
+<h2 id="data.dataset" class="doc doc-heading">
+            <code>data.dataset</code>
 
 
 </h2>
@@ -722,8 +710,8 @@
 
 
 
-<h3 id="train.trainer.BasicTrainer" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">BasicTrainer</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">objective</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">scheduler</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">accumulation_steps</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">epoch_callback</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+<h3 id="data.dataset.ImageDataset" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">ImageDataset</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">col_path</span><span class="o">=</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">col_label</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">load_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -731,8 +719,7 @@
     <div class="doc doc-contents ">
 
 
-        <p>Implements basic training loop for Pytorch models.
-Checkpoints includes random states - any restarts from checkpoint preservers reproducibility.</p>
+        <p>PyTorch-style dataset for a image datasets</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -747,12 +734,13 @@ Checkpoints includes random states - any restarts from checkpoint preservers rep
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>dataset</code></td>
+            <td><code>metadata</code></td>
             <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Training dataset that gives (x, y) tensor pairs.</p>
+                <p>A pandas dataframe containing image metadata.</p>
               </div>
             </td>
             <td>
@@ -760,54 +748,13 @@ Checkpoints includes random states - any restarts from checkpoint preservers rep
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>model</code></td>
+            <td><code>root</code></td>
             <td>
-                  <code>dict</code>
+                  <code>str | None</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Pytorch nn.Module for model / backbone.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>objective</code></td>
-            <td>
-                  <code>dict</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Pytorch nn.Module for objective / loss function.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>optimizer</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Pytorch optimizer.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>scheduler</code></td>
-            <td>
-                  <code>optional</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Pytorch scheduler.</p>
+                <p>Root directory if paths in metadata are relative. If None, absolute paths in metadata are used.</p>
               </div>
             </td>
             <td>
@@ -815,343 +762,117 @@ Checkpoints includes random states - any restarts from checkpoint preservers rep
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>epochs</code></td>
+            <td><code>transform</code></td>
             <td>
-                  <code>int</code>
+                  <code><span title="typing.Callable">Callable</span> | None</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of training epochs.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>device</code></td>
-            <td>
-                  <code>(str, default)</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>'cuda'):
-Device to be used for training.</p>
-              </div>
-            </td>
-            <td>
-                  <code>&#39;cuda&#39;</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>batch_size</code></td>
-            <td>
-                  <code>(int, default)</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>128):
-Training batch size.</p>
-              </div>
-            </td>
-            <td>
-                  <code>128</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>num_workers</code></td>
-            <td>
-                  <code>(int, default)</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>1):
-Number of data loading workers in torch DataLoader.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>accumulation_steps</code></td>
-            <td>
-                  <code>(int, default)</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>1):
-Number of gradient accumulation steps.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>epoch_callback</code></td>
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Callback function to be called after each epoch.</p>
+                <p>A function that takes in an image and returns its transformed version.</p>
               </div>
             </td>
             <td>
                   <code>None</code>
             </td>
           </tr>
-      </tbody>
-    </table>
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-
-<div class="doc doc-object doc-function">
-
-
-<h3 id="train.trainer.get_random_states" class="doc doc-heading">
-            <code class="highlight language-python"><span class="n">get_random_states</span><span class="p">()</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-
-        <p>Gives dictionary of random states for reproducibility.</p>
-
-    </div>
-
-</div>
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-module">
-
-
-
-<h2 id="train.objective" class="doc doc-heading">
-            <code>train.objective</code>
-
-
-</h2>
-
-    <div class="doc doc-contents first">
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="train.objective.ArcFaceLoss" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">ArcFaceLoss</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><span title="torch.nn.Module">Module</span></code></p>
-
-
-        <p>Wraps Pytorch Metric Learning ArcFaceLoss.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
           <tr class="doc-section-item">
-            <td><code>num_classes</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Number of classes.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>embedding_size</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Size of the input embeddings.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>margin</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Margin for ArcFace loss (in radians).</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.5</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>scale</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Scale parameter for ArcFace loss.</p>
-              </div>
-            </td>
-            <td>
-                  <code>64</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
-
-
-
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="train.objective.TripletLoss" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">TripletLoss</span><span class="p">(</span><span class="n">margin</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">mining</span><span class="o">=</span><span class="s1">&#39;seminard&#39;</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="s1">&#39;l2_squared&#39;</span><span class="p">)</span></code>
-
-</h3>
-
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><span title="torch.nn.Module">Module</span></code></p>
-
-
-        <p>Wraps Pytorch Metric Learning TripletMarginLoss.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>margin</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Margin for triplet loss.</p>
-              </div>
-            </td>
-            <td>
-                  <code>0.2</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>mining</code></td>
+            <td><code>col_path</code></td>
             <td>
                   <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Type of triplet mining. One of: 'all', 'hard', 'semihard'</p>
+                <p>Column name in the metadata containing image file paths.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;seminard&#39;</code>
+                  <code>&#39;path&#39;</code>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>distance</code></td>
+            <td><code>col_label</code></td>
             <td>
                   <code>str</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Distance metric for triplet loss. One of: 'cosine', 'l2', 'l2_squared'</p>
+                <p>Column name in the metadata containing class labels.</p>
               </div>
             </td>
             <td>
-                  <code>&#39;l2_squared&#39;</code>
+                  <code>&#39;identity&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>load_label</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If False, __getitem__ returns only image instead of (image, label) tuple.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.ImageDataset.labels">labels</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An integers array of ordinal encoding of labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.ImageDataset.labels_string">labels_string</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A strings array of original labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.ImageDataset.labels_map">labels_map</span></code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A mapping between labels and their ordinal encoding.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.ImageDataset.num_classes">num_classes</span></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Return the number of unique classes in the dataset.</p>
+              </div>
             </td>
           </tr>
       </tbody>
@@ -1182,18 +903,18 @@ Number of gradient accumulation steps.</p>
 
 
 
-<h3 id="train.objective.SoftmaxLoss" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">SoftmaxLoss</span><span class="p">(</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">)</span></code>
+<h3 id="data.dataset.WildlifeDataset" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">img_load</span><span class="o">=</span><span class="s1">&#39;full&#39;</span><span class="p">,</span> <span class="n">col_path</span><span class="o">=</span><span class="s1">&#39;path&#39;</span><span class="p">,</span> <span class="n">col_label</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">load_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
 
     <div class="doc doc-contents ">
             <p class="doc doc-class-bases">
-              Bases: <code><span title="torch.nn.Module">Module</span></code></p>
+              Bases: <code><a class="autorefs autorefs-internal" title="data.dataset.ImageDataset" href="#data.dataset.ImageDataset">ImageDataset</a></code></p>
 
 
-        <p>CE with single dense layer classification head.</p>
+        <p>PyTorch-style dataset for a datasets from wildlife-datasets library.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1208,13 +929,13 @@ Number of gradient accumulation steps.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>num_classes</code></td>
+            <td><code>metadata</code></td>
             <td>
-                  <code>int</code>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Number of classes.</p>
+                <p>A pandas dataframe containing image metadata.</p>
               </div>
             </td>
             <td>
@@ -1222,21 +943,354 @@ Number of gradient accumulation steps.</p>
             </td>
           </tr>
           <tr class="doc-section-item">
-            <td><code>embedding_size</code></td>
+            <td><code>root</code></td>
+            <td>
+                  <code>str | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Root directory if paths in metadata are relative. If None, absolute paths in metadata are used.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>transform</code></td>
+            <td>
+                  <code><span title="typing.Callable">Callable</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A function that takes in an image and returns its transformed version.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>img_load</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Method to load images.
+Options: 'full', 'full_mask', 'full_hide', 'bbox', 'bbox_mask', 'bbox_hide',
+          and 'crop_black'.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;full&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>col_path</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Column name in the metadata containing image file paths.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;path&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>col_label</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Column name in the metadata containing class labels.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;identity&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>load_label</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If False, __getitem__ returns only image instead of (image, label) tuple.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.WildlifeDataset.labels">labels</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An integers array of ordinal encoding of labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.WildlifeDataset.labels_string">labels_string</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A strings array of original labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.WildlifeDataset.labels_map">labels_map</span></code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A mapping between labels and their ordinal encoding.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.WildlifeDataset.num_classes">num_classes</span></code></td>
             <td>
                   <code>int</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Size of the input embeddings.</p>
+                <p>Return the number of unique classes in the dataset.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="data.dataset.FeatureDataset" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">FeatureDataset</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">col_label</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">load_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+
+        <p>PyTorch-style dataset for a extracted features. Couples features with metadata.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>features</code></td>
+            <td>
+                  <code>list</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>list, np.array or tensor of features. Index of features should match with metadata.</p>
               </div>
             </td>
             <td>
                 <em>required</em>
             </td>
           </tr>
+          <tr class="doc-section-item">
+            <td><code>metadata</code></td>
+            <td>
+                  <code><span title="pandas.DataFrame">DataFrame</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A pandas dataframe containing features metadata.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>col_label</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Column name in the metadata containing class labels.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;identity&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>load_label</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If False, __getitem__ returns only image instead of (image, label) tuple.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
+            </td>
+          </tr>
       </tbody>
     </table>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.FeatureDataset.labels">labels</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>An integers array of ordinal encoding of labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.FeatureDataset.labels_string">labels_string</span></code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A strings array of original labels.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.FeatureDataset.labels_map">labels_map</span></code></td>
+            <td>
+                  <code>dict</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A mapping between labels and their ordinal encoding.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="data.dataset.FeatureDataset.num_classes">num_classes</span></code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Return the number of unique classes in the dataset.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="data.dataset.FeatureDatabase" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">FeatureDatabase</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">col_label</span><span class="o">=</span><span class="s1">&#39;identity&#39;</span><span class="p">,</span> <span class="n">load_label</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><a class="autorefs autorefs-internal" title="data.dataset.FeatureDataset" href="#data.dataset.FeatureDataset">FeatureDataset</a></code></p>
+
+
+        <p>Alias for FeatureDataset</p>
 
 
 
@@ -1266,40 +1320,100 @@ Number of gradient accumulation steps.</p>
 
     </div>
 
-</div><h2 id="examples">Examples</h2>
-<p>Fine-tuning MegaDescriptor-T from HuggingFace Hub</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">timm</span>
-<span class="kn">import</span> <span class="nn">itertools</span>
-<span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">SGD</span>
-<span class="kn">from</span> <span class="nn">wildlife_tools.train</span> <span class="kn">import</span> <span class="n">ArcFaceLoss</span><span class="p">,</span> <span class="n">BasicTrainer</span>
-<span class="kn">from</span> <span class="nn">wildlife_tools.train</span> <span class="kn">import</span> <span class="n">set_seed</span>
+</div><h1 id="wildlife-dataset">Wildlife dataset</h1>
+<p>WildlifeDataset is a class for creating Pytorch style image datasets and allows integration of datasets provided by <code>wildlife-datasets</code> library. It has implemented <code>__len__</code> and <code>__getattr__</code> methods, which allows using standard Pytorch dataloaders for training and inference.</p>
+<h2 id="metadata-dataframe">Metadata dataframe</h2>
+<p>Key part of WildlifeDataset is metadata dataframe, which includes all information about images in the dataset.
+Typical dataset from the wildlife-dataset have following metadata table:</p>
+<table>
+<thead>
+<tr>
+<th>image_id</th>
+<th>identity</th>
+<th>path</th>
+<th>split</th>
+<th>bbox</th>
+<th>segmentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_1</td>
+<td>a</td>
+<td>images/a/image_1</td>
+<td>train</td>
+<td><code>bbox</code></td>
+<td><code>compressed rle</code></td>
+</tr>
+<tr>
+<td>image_2</td>
+<td>a</td>
+<td>images/a/image_2</td>
+<td>test</td>
+<td><code>bbox</code></td>
+<td><code>compressed rle</code></td>
+</tr>
+<tr>
+<td>image_3</td>
+<td>b</td>
+<td>images/b/image_3</td>
+<td>train</td>
+<td><code>bbox</code></td>
+<td><code>compressed rle</code></td>
+</tr>
+</tbody>
+</table>
+<p>Columns <code>image_id</code>, <code>identity</code>, <code>path</code> are required, other columns are optional. In the table above, <code>bbox</code> is bounding box in form [x, y, width, height], and can be stored both as list or string. <code>compressed rle</code> is segmentation mask in compressed RLE format as described by <a href="https://pypi.org/project/pycocotools/">pycocotools</a></p>
+<h2 id="loading-methods">Loading methods</h2>
+<p>If metadata table have optional <code>bbox</code> or <code>segmentation</code> columns, additional alternative image loading methods can be used.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Loading effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>full</code></td>
+<td>Full image</td>
+</tr>
+<tr>
+<td><code>full_mask</code></td>
+<td>Full image with redacted background</td>
+</tr>
+<tr>
+<td><code>full_hide</code></td>
+<td>Full image with redacted foreground</td>
+</tr>
+<tr>
+<td><code>bbox</code></td>
+<td>Bounding box cropp</td>
+</tr>
+<tr>
+<td><code>bbox_mask</code></td>
+<td>Bounding box cropp with redacted background</td>
+</tr>
+<tr>
+<td><code>bbox_hide</code></td>
+<td>Bounding box cropp with redacted foreground</td>
+</tr>
+<tr>
+<td><code>crop_black</code></td>
+<td>Black background cropp, if there is one</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Image loading methods" src="../figures/loading_methods.png" /></p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wildlife_tools.data.dataset</span> <span class="kn">import</span> <span class="n">WildlifeDataset</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># Download MegaDescriptor-T backbone from HuggingFace Hub</span>
-<span class="n">backbone</span> <span class="o">=</span> <span class="n">timm</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="s1">&#39;hf-hub:BVRA/MegaDescriptor-T-224&#39;</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">metadata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ExampleDataset/metadata.csv&#39;</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">WildlifeDataset</span><span class="p">(</span><span class="n">metadata</span><span class="p">,</span> <span class="s1">&#39;ExampleDataset&#39;</span><span class="p">)</span>
 
-<span class="c1"># Arcface loss - needs backbone output size and number of classes.</span>
-<span class="n">objective</span> <span class="o">=</span> <span class="n">ArcFaceLoss</span><span class="p">(</span>
-    <span class="n">num_classes</span><span class="o">=</span><span class="n">dataset</span><span class="o">.</span><span class="n">num_classes</span><span class="p">,</span>
-    <span class="n">embedding_size</span><span class="o">=</span><span class="mi">768</span><span class="p">,</span>
-    <span class="n">margin</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
-    <span class="n">scale</span><span class="o">=</span><span class="mi">64</span>
-    <span class="p">)</span>
-
-<span class="c1"># Optimize parameters in backbone and in objective using single optimizer.</span>
-<span class="n">params</span> <span class="o">=</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="n">backbone</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">objective</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">SGD</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span>
-
-<span class="n">set_seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">trainer</span> <span class="o">=</span> <span class="n">BasicTrainer</span><span class="p">(</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="n">dataset</span><span class="p">,</span>
-    <span class="n">model</span><span class="o">=</span><span class="n">backbone</span><span class="p">,</span>
-    <span class="n">objective</span><span class="o">=</span><span class="n">objective</span><span class="p">,</span>
-    <span class="n">optimizer</span><span class="o">=</span><span class="n">optimizer</span><span class="p">,</span>
-    <span class="n">epochs</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
-    <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="n">trainer</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="c1"># View first image in the dataset.</span>
+<span class="n">image</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div>
 
 

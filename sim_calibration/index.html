@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../sim_wildfusion/">
+        <link rel="prev" href="../sim_matching/">
       
       
-        <link rel="next" href="../baseline/">
+        <link rel="next" href="../sim_wildfusion/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Inference - Wildlife Tools</title>
+        <title>Calibration - Wildlife Tools</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#inference" class="md-skip">
+        <a href="#similarity-scores-calibration" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Inference
+              Calibration
             
           </span>
         </div>
@@ -257,17 +257,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -281,7 +283,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Similarity
@@ -334,10 +336,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sim_calibration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Calibration
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -346,6 +368,125 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#similarity.calibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      calibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.LogisticCalibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      LogisticCalibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="LogisticCalibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.LogisticCalibration.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.LogisticCalibration.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.IsotonicCalibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      IsotonicCalibration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IsotonicCalibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.IsotonicCalibration.fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.IsotonicCalibration.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.reliability_diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      reliability_diagram
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -383,30 +524,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Inference
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../inference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -415,89 +536,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#inference.classifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      classifier
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="classifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inference.classifier.KnnClassifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      KnnClassifier
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="KnnClassifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inference.classifier.KnnClassifier.__call__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __call__
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inference.classifier.TopkClassifier" class="md-nav__link">
-    <span class="md-ellipsis">
-      TopkClassifier
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="TopkClassifier">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#inference.classifier.TopkClassifier.__call__" class="md-nav__link">
-    <span class="md-ellipsis">
-      __call__
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -549,29 +587,38 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#inference.classifier" class="md-nav__link">
+  <a href="#similarity.calibration" class="md-nav__link">
     <span class="md-ellipsis">
-      classifier
+      calibration
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="classifier">
+    <nav class="md-nav" aria-label="calibration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inference.classifier.KnnClassifier" class="md-nav__link">
+  <a href="#similarity.calibration.LogisticCalibration" class="md-nav__link">
     <span class="md-ellipsis">
-      KnnClassifier
+      LogisticCalibration
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="KnnClassifier">
+    <nav class="md-nav" aria-label="LogisticCalibration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inference.classifier.KnnClassifier.__call__" class="md-nav__link">
+  <a href="#similarity.calibration.LogisticCalibration.fit" class="md-nav__link">
     <span class="md-ellipsis">
-      __call__
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.LogisticCalibration.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict
     </span>
   </a>
   
@@ -583,19 +630,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#inference.classifier.TopkClassifier" class="md-nav__link">
+  <a href="#similarity.calibration.IsotonicCalibration" class="md-nav__link">
     <span class="md-ellipsis">
-      TopkClassifier
+      IsotonicCalibration
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="TopkClassifier">
+    <nav class="md-nav" aria-label="IsotonicCalibration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#inference.classifier.TopkClassifier.__call__" class="md-nav__link">
+  <a href="#similarity.calibration.IsotonicCalibration.fit" class="md-nav__link">
     <span class="md-ellipsis">
-      __call__
+      fit
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.IsotonicCalibration.predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      predict
     </span>
   </a>
   
@@ -606,8 +662,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#similarity.calibration.reliability_diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      reliability_diagram
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
   
 </li>
       
@@ -629,18 +703,27 @@
   
 
 
-<h1 id="inference">Inference</h1>
-<p>This <code>inference</code> module uses similarity scores to perform predictions on unseen data. This includes
-classification (<code>KnnClassifier</code> class) and ranking (<code>TopkClassifier</code> class) using using nearest neigbours.
-Similarity scores are expected to be in the form of 2D array with shape <code>n_query</code> x <code>n_database</code>.</p>
+<h1 id="similarity-scores-calibration">Similarity scores calibration</h1>
+<p>The <code>similarity.calibration</code> module offers tools to improve the interpretability and utility of similarity scores by calibrating them. Calibration allows similarity scores to be interpreted as probabilities, making them suitable for confidence assessments and thresholding. This also enables the effective ensemble of multiple scores by mapping them onto a common probabilistic scale.</p>
+<ul>
+<li>Calibration Methods:<ul>
+<li><code>LogisticCalibration</code>: Uses logistic regression to map similarity scores to probabilities, providing a smooth and parametric approach to calibration.</li>
+<li><code>IsotonicCalibration</code>: A non-parametric approach that fits isotonic regression. Conceptually similar to score binning.</li>
+</ul>
+</li>
+<li>Visualization:<ul>
+<li>The <code>reliability_diagram</code> function allows for visual comparison of calibrated and uncalibrated scores. This tool is helpful for assessing calibration quality, as it visualizes how well the predicted probabilities align with observed outcomes.</li>
+</ul>
+</li>
+</ul>
 
 
 <div class="doc doc-object doc-module">
 
 
 
-<h2 id="inference.classifier" class="doc doc-heading">
-            <code>inference.classifier</code>
+<h2 id="similarity.calibration" class="doc doc-heading">
+            <code>similarity.calibration</code>
 
 
 </h2>
@@ -662,8 +745,8 @@ Similarity scores are expected to be in the form of 2D array with shape <code>n_
 
 
 
-<h3 id="inference.classifier.KnnClassifier" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">KnnClassifier</span><span class="p">(</span><span class="n">database_labels</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">return_scores</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<h3 id="similarity.calibration.LogisticCalibration" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">LogisticCalibration</span><span class="p">()</span></code>
 
 </h3>
 
@@ -671,66 +754,7 @@ Similarity scores are expected to be in the form of 2D array with shape <code>n_
     <div class="doc doc-contents ">
 
 
-        <p>Predict query label as k labels of nearest matches in the database.
-If there is a tie at a given k, the prediction with the best score is used.</p>
-
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-          <th>Default</th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr class="doc-section-item">
-            <td><code>database_labels</code></td>
-            <td>
-                  <code><span title="numpy.array">array</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing the labels of the database.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>k</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of nearest neighbors to consider.</p>
-              </div>
-            </td>
-            <td>
-                  <code>1</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>return_scores</code></td>
-            <td>
-                  <code>bool</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Indicates whether to return scores along with predictions.</p>
-              </div>
-            </td>
-            <td>
-                  <code>False</code>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        <p>Performs logistic regression calibration.</p>
 
 
 
@@ -748,15 +772,15 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
 <div class="doc doc-object doc-function">
 
 
-<h4 id="inference.classifier.KnnClassifier.__call__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="n">similarity</span><span class="p">)</span></code>
+<h4 id="similarity.calibration.LogisticCalibration.fit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fit</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">hits</span><span class="p">)</span></code>
 
 </h4>
 
 
     <div class="doc doc-contents ">
 
-        <p>Predicts the label for each query based on the k nearest matches in the database.</p>
+        <p>Fit the logistic regression model to calibrate raw scores.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -771,12 +795,73 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>similarity</code></td>
+            <td><code>scores</code></td>
             <td>
+                  <code><span title="numpy.array">array</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A 2D similarity matrix with <code>n_query</code> x <code>n_database</code> shape.</p>
+                <p>Raw uncalibrated scores.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>hits</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ground truth binary labels.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="similarity.calibration.LogisticCalibration.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Predict calibrated scores using a fitted calibration model.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>scores</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Raw uncalibrated scores.</p>
               </div>
             </td>
             <td>
@@ -791,33 +876,18 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>prediction</code></td>            <td>
+                  <code><span title="numpy.array">array</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If <code>return_scores</code> is False:</p>
-<ul>
-<li>preds: Prediction for each query.</li>
-</ul>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>return_scores</code> is True, tuple of two arrays:</p>
-<ul>
-<li>preds: Prediction for each query.</li>
-<li>scores: The similarity scores corresponding to the predictions (mean for k &gt; 1).</li>
-</ul>
+                <p>Calibrated scores.</p>
               </div>
             </td>
           </tr>
@@ -840,8 +910,8 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
 
 
 
-<h3 id="inference.classifier.TopkClassifier" class="doc doc-heading">
-              <code class="highlight language-python"><span class="n">TopkClassifier</span><span class="p">(</span><span class="n">database_labels</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">return_all</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></code>
+<h3 id="similarity.calibration.IsotonicCalibration" class="doc doc-heading">
+              <code class="highlight language-python"><span class="n">IsotonicCalibration</span><span class="p">(</span><span class="n">interpolate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></code>
 
 </h3>
 
@@ -849,7 +919,9 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
     <div class="doc doc-contents ">
 
 
-        <p>Predict top k query labels given nearest matches in the database.</p>
+        <p>Performs isotonic regression calibration for ranking.</p>
+<p>Compared to standard isotonic regression, this implementation uses spline interpolation
+to ensure that the calibration curve is strictly increasing, which is necessary for ranking.</p>
 
 
 
@@ -865,45 +937,31 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>database_labels</code></td>
-            <td>
-                  <code><span title="numpy.array">array</span></code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>Array containing the labels of the database.</p>
-              </div>
-            </td>
-            <td>
-                <em>required</em>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>k</code></td>
-            <td>
-                  <code>int</code>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>The number of top predictions to return.</p>
-              </div>
-            </td>
-            <td>
-                  <code>10</code>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td><code>return_all</code></td>
+            <td><code>interpolate</code></td>
             <td>
                   <code>bool</code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>Indicates whether to return scores along with predictions.</p>
+                <p>If True, use spline interpolation for calibration.</p>
               </div>
             </td>
             <td>
-                  <code>False</code>
+                  <code>True</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>strict</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, apply strict adjustment to predictions.</p>
+              </div>
+            </td>
+            <td>
+                  <code>True</code>
             </td>
           </tr>
       </tbody>
@@ -925,15 +983,15 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
 <div class="doc doc-object doc-function">
 
 
-<h4 id="inference.classifier.TopkClassifier.__call__" class="doc doc-heading">
-            <code class="highlight language-python"><span class="fm">__call__</span><span class="p">(</span><span class="n">similarity</span><span class="p">)</span></code>
+<h4 id="similarity.calibration.IsotonicCalibration.fit" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">fit</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">hits</span><span class="p">)</span></code>
 
 </h4>
 
 
     <div class="doc doc-contents ">
 
-        <p>Predicts the top k labels for each query based on the similarity matrix.</p>
+        <p>Fit the isotonic regression model to calibrate the scores.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -948,12 +1006,73 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td><code>similarity</code></td>
+            <td><code>scores</code></td>
             <td>
+                  <code><span title="numpy.array">array</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>A 2D similarity matrix with <code>n_query</code> x <code>n_database</code> shape</p>
+                <p>Raw uncalibrated scores.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>hits</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ground truth binary labels.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="similarity.calibration.IsotonicCalibration.predict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">predict</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span></code>
+
+</h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Predict calibrated scores using a fitted calibration model.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>scores</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Raw uncalibrated scores.</p>
               </div>
             </td>
             <td>
@@ -968,34 +1087,18 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
     <table>
       <thead>
         <tr>
-          <th>Type</th>
+<th>Name</th>          <th>Type</th>
           <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-            <td>
+<td><code>calibrated_scores</code></td>            <td>
+                  <code><span title="numpy.array">array</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>If <code>return_all</code> is False, single 2D array of shape <code>n_query</code> x <code>k</code></p>
-<ul>
-<li>preds: The top k predicted labels for each query.</li>
-</ul>
-              </div>
-            </td>
-          </tr>
-          <tr class="doc-section-item">
-            <td>
-            </td>
-            <td>
-              <div class="doc-md-description">
-                <p>If <code>return_all</code> is True, tuple of three 2D arrays of shape <code>n_query</code> x <code>k</code>:</p>
-<ul>
-<li>preds: The top k predicted labels for each query.</li>
-<li>scores: The similarity scores corresponding to the top k predictions.</li>
-<li>idx: The indices of the database entries corresponding to the top k predictions.</li>
-</ul>
+                <p>Calibrated scores.</p>
               </div>
             </td>
           </tr>
@@ -1015,13 +1118,160 @@ If there is a tie at a given k, the prediction with the best score is used.</p>
 </div>
 
 
+<div class="doc doc-object doc-function">
+
+
+<h3 id="similarity.calibration.reliability_diagram" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reliability_diagram</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">hits</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">skip_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Reliability Diagram&#39;</span><span class="p">)</span></code>
+
+</h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Calculates ECE (Expected calibration error) and plots reliability diagram for a given set of
+scores and hits.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code>scores</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Raw uncalibrated scores.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>hits</code></td>
+            <td>
+                  <code><span title="numpy.array">array</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Ground truth binary labels.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>ax</code></td>
+            <td>
+                  <code><span title="matplotlib.axes.Axes">Axes</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Axes to plot the diagram on. If None, a new figure is created.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>skip_plot</code></td>
+            <td>
+                  <code>bool</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If True, only return ECE value.</p>
+              </div>
+            </td>
+            <td>
+                  <code>False</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>num_bins</code></td>
+            <td>
+                  <code>int</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Number of bins to divide the scores into.</p>
+              </div>
+            </td>
+            <td>
+                  <code>10</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code>title</code></td>
+            <td>
+                  <code>str</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Title of the plot.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;Reliability Diagram&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+<th>Name</th>          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+<td><code>ece</code></td>            <td>
+                  <code>float</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Expected Calibration Error.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+</div>
+
 
 
   </div>
 
     </div>
 
-</div>
+</div><h2 id="examples">Examples</h2>
+<p>Example of isotonic regression calibration.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">wildlife_tools.similarity.calibration</span> <span class="kn">import</span> <span class="n">IsotonicCalibration</span>
+
+<span class="n">calibration</span> <span class="o">=</span> <span class="n">IsotonicCalibration</span><span class="p">()</span>
+<span class="n">calibration</span><span class="o">.</span><span class="n">fit</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">calibration</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">])</span>
+</code></pre></div>
 
 
 
